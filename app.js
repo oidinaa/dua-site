@@ -30,6 +30,7 @@ let activeCollection = null;
 let duas = [];
 let activeIndex = 0;
 let notesReturnView = "home";
+let swipeStart = null;
 const collectionCache = {};
 const savedNotes = new Set();
 
@@ -319,6 +320,27 @@ nextButton.addEventListener("click", () => {
     renderDua();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+});
+
+readingView.addEventListener("pointerdown", (event) => {
+  if (event.pointerType !== "touch" || event.target.closest("button, a, input, textarea, select")) {
+    swipeStart = null;
+    return;
+  }
+  swipeStart = { x: event.clientX, y: event.clientY };
+});
+readingView.addEventListener("pointerup", (event) => {
+  if (!swipeStart || event.pointerType !== "touch") return;
+  const deltaX = event.clientX - swipeStart.x;
+  const deltaY = event.clientY - swipeStart.y;
+  swipeStart = null;
+
+  if (Math.abs(deltaX) < 60 || Math.abs(deltaX) < Math.abs(deltaY) * 1.3) return;
+  if (deltaX < 0 && !nextButton.disabled) nextButton.click();
+  if (deltaX > 0 && !previousButton.disabled) previousButton.click();
+});
+readingView.addEventListener("pointercancel", () => {
+  swipeStart = null;
 });
 
 document.querySelectorAll("[data-theme-choice]").forEach((button) => {

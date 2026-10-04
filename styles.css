@@ -100,7 +100,7 @@ button { color: inherit; }
 .collection-arrow { justify-self: end; color: var(--muted); transition: color 160ms ease, transform 160ms ease; }
 .collection-arrow svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .collection-option:hover .collection-arrow { color: var(--accent); transform: translate(2px, -2px); }
-.reading-view { width: min(780px, 100%); margin: 0 auto; padding: 42px 0 60px; animation: enter 320ms ease both; }
+.reading-view { width: min(780px, 100%); margin: 0 auto; padding: 42px 0 60px; animation: enter 320ms ease both; touch-action: pan-y; }
 .notes-view { width: min(780px, 100%); min-height: 55vh; margin: 0 auto; padding: 42px 0 60px; animation: enter 320ms ease both; }
 .notes-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
 .notes-heading h1 { margin: 0; font-family: "Site Heading", sans-serif; font-size: 22px; font-weight: 400; text-transform: uppercase; }
