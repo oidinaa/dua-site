@@ -97,7 +97,8 @@ button { color: inherit; }
 .collection-copy { display: grid; gap: 7px; }
 .collection-title { font-family: "Site Heading", sans-serif; font-size: 22px; line-height: 1.2; text-transform: uppercase; }
 .collection-caption { color: var(--muted); font-size: 12px; }
-.collection-arrow { justify-self: end; color: var(--muted); font-size: 19px; transition: color 160ms ease, transform 160ms ease; }
+.collection-arrow { justify-self: end; color: var(--muted); transition: color 160ms ease, transform 160ms ease; }
+.collection-arrow svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .collection-option:hover .collection-arrow { color: var(--accent); transform: translate(2px, -2px); }
 .reading-view { width: min(780px, 100%); margin: 0 auto; padding: 42px 0 60px; animation: enter 320ms ease both; }
 .notes-view { width: min(780px, 100%); min-height: 55vh; margin: 0 auto; padding: 42px 0 60px; animation: enter 320ms ease both; }
